@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StorePostRequest;
 use App\Http\Requests\Admin\StoreprojectRequest;
+use App\Models\Type;
 use App\Models\project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 use SebastianBergmann\CodeCoverage\Report\Xml\Project as XmlProject;
 use SebastianBergmann\CodeCoverage\Report\Xml\Projects;
 
@@ -65,9 +67,11 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
+        $types =Type::all();
         $post = Project::findOrFail($id);
 
-        return view("admin.posts.edit", compact("post"));
+        return view("admin.posts.edit", [  "posts" => $post,
+          "type"=>$types]);
     }
     
 

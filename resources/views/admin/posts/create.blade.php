@@ -48,6 +48,20 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            <label class="form-label">Tipologia</label>
+            <select class="form-select @error('type_id') is-invalid @enderror" name="type_id"  value="{{ old('type_id') }}">
+
+                @foreach ($types as $type)
+                    <option value={{ $type->id }}>{{ $type->typeName }}</option>
+                @endforeach
+            </select>
+            @error('type_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
 
         <div class="text-center">
             <a href="{{ route('admin.posts.index') }}" class="btn btn-danger">Annulla</a>

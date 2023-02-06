@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php
-    $title = 'Post #' . $post->id;
+    $title = 'Progetto #' . $post->id;
 @endphp
 
 @section('title', $title)
@@ -29,8 +29,8 @@
             <div class="card-body text-white">
                 <div class="card-title"><strong class="px-3 text-warning">Nome:</strong>{{ $post->name }}</div>
                 <p class="card-text"><strong class="px-3 text-warning">Descrizione:</strong>{{ $post->description }}</p>
-                
-                <div><strong class="px-3 text-warning">ID:</strong > {{ $post->id }} </div>
+                <p class="card-text">{{ $post->types->typeName }}</p>
+                <div><strong class="px-3 text-warning">ID:</strong> {{ $post->id }} </div>
             </div>
         </div>
     </div>s

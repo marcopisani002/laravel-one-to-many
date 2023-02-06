@@ -3,7 +3,7 @@
 
 
 @section('content')
-  <h1>{{'Modifica post #' . $post->id}}</h1>
+  <h1>{{'Modifica progetto #' . $post->id}}</h1>
 
 
   <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
@@ -39,8 +39,20 @@
         </div>
       @enderror
     </div>
+    <div class="mb-3">
+      <label class="form-label">Tipo</label>
+      <select class="form-select @error('type_id') is-invalid @enderror" name="type_id">
 
-    
+          @foreach ($type as $singletype)
+              <option value={{ $singletype->id }}>{{ $singletype->typeName }}</option>
+          @endforeach
+      </select>
+      @error('type_id')
+          <div class="invalid-feedback">
+              {{ $message }}
+          </div>
+      @enderror
+  </div>
 
     <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Annulla</a>
     <button class="btn btn-primary">Salva</button>

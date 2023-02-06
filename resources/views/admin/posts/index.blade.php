@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between mb-5 mt-5 me-3 px-3">
 
-  <h2 class="text-white fw-bold ">Lista post</h2>
+  <h2 class="text-white fw-bold ">Lista progetti</h2>
   <a  href="{{ route('admin.posts.create') }}" class="btn btn-success ">  + Create</a>
   
 
@@ -29,6 +29,7 @@
           <td><img src="{{ $post->cover_img }}" alt="" style="width: 60px"></td>
           <td class="text-center pt-4">{{ $post->name }}</td>
           <td class="text-center pt-4">{{ $post->description }}</td>
+          <td>{{ $Post->types->typeName }}</td>
           <td><img src="https://kinsta.com/wp-content/uploads/2018/04/what-is-github-1-1-1024x512.png" class="my-with-a"><a href="www.github.com"></a></td>
           <td class="text-center pt-4">
             <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning"><i class="fas fa-eye"></i>Edit</a>
