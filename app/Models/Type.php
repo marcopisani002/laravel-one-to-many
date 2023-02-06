@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
-class TypeTable extends Model
+class Type extends Model
 {
     use HasFactory;
 

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\TypeTable;
 
 class project extends Model
 {
@@ -15,7 +14,7 @@ class project extends Model
 
    public function types()
    {
-     return $this->hasMany(TypeTable::class);
+     return $this->hasMany(Type::class);
    }
 
 

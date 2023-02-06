@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StorePostRequest;
 use App\Http\Requests\Admin\StoreprojectRequest;
 use App\Models\TypeTable;
 use App\Models\project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,7 +34,7 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $types = TypeTable::all();
+        $types = Type::all();
         return view("admin.posts.create",[
             "types"=>$types
         ]);
@@ -70,7 +71,7 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $types =TypeTable::all();
+        $types =Type::all();
         $post = Project::findOrFail($id);
 
         return view("admin.posts.edit", [  "posts" => $post,
