@@ -17,6 +17,7 @@
         <th>Cover</th>
         <th>Nome</th>
         <th>Descrizione</th>
+         <th>creation_date</th>
         <th>GITHUB</th>
         <th>Azioni</th>
       </tr>
@@ -29,7 +30,7 @@
           <td><img src="{{ $post->cover_img }}" alt="" style="width: 60px"></td>
           <td class="text-center pt-4">{{ $post->name }}</td>
           <td class="text-center pt-4">{{ $post->description }}</td>
-          <td>{{ $Post->types->typeName }}</td>
+          <td>{{ $post->types->typeName }}</td>
           <td><img src="https://kinsta.com/wp-content/uploads/2018/04/what-is-github-1-1-1024x512.png" class="my-with-a"><a href="www.github.com"></a></td>
           <td class="text-center pt-4">
             <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning"><i class="fas fa-eye"></i>Edit</a>
