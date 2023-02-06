@@ -43,7 +43,7 @@
       <label class="form-label">Tipo</label>
       <select class="form-select @error('type_id') is-invalid @enderror" name="type_id">
 
-          @foreach ($type as $singletype)
+          @foreach ($types as $singletype)
               <option value={{ $singletype->id }}>{{ $singletype->typeName }}</option>
           @endforeach
       </select>
