@@ -32,9 +32,7 @@
                     <td class="text-center pt-4">{{ $post->name }}</td>
                     <td class="text-center pt-4">{{ $post->description }}</td>
                     <td class="text-center pt-4 text-white">
-                        @foreach ($post->types as $type)
-                            {{ $type->typeName }}
-                        @endforeach
+                      {{$post->type==null ? "":$post->type->typeName}}
                     </td>
                     <td><img src="https://kinsta.com/wp-content/uploads/2018/04/what-is-github-1-1-1024x512.png"
                             class="my-with-a"><a href="www.github.com"></a></td>

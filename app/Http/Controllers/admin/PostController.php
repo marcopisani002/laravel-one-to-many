@@ -22,10 +22,11 @@ class PostController extends Controller {
      */
     public function index() {
         $posts = project::all();
-        $types = Type::all();
+       
+    
         return view("admin.posts.index", [
             "posts" => $posts,
-             "types"=>$types
+            
         ]);
     }
 
@@ -36,6 +37,7 @@ class PostController extends Controller {
      */
     public function create() {
         $types = Type::all();
+
         return view("admin.posts.create",[
             "types"=>$types
         ]);
@@ -49,7 +51,7 @@ class PostController extends Controller {
      */
     public function store(StorePostRequest $request) {
         $data = $request->all();
-
+       
         $post = Project::create($data);
 
         return redirect()->route("admin.posts.show", $post->id);
@@ -62,8 +64,9 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Project $post) {
-        $types =Type::all();
-        return view("admin.posts.show", compact("post","types"));
+        
+     
+        return view("admin.posts.show", compact("post"));
     }
 
     /**
