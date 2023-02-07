@@ -22,9 +22,10 @@ class PostController extends Controller {
      */
     public function index() {
         $posts = project::all();
-
+        $types = Type::all();
         return view("admin.posts.index", [
-            "posts" => $posts
+            "posts" => $posts,
+             "types"=>$types
         ]);
     }
 
@@ -74,8 +75,9 @@ class PostController extends Controller {
         $types =Type::all();
         $post = Project::findOrFail($id);
 
-        return view("admin.posts.edit", [  "posts" => $post,
-          "type"=>$types]);
+        return view("admin.posts.edit", [  
+            "posts" => $post,
+          "types"=>$types]);
     }
     
 

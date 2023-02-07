@@ -29,7 +29,8 @@
 
         <div class="mb-3">
             <label class="form-label">Contenuto</label>
-            <textarea name="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+            <textarea name="description" cols="30" rows="5"
+                class="form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
             @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -38,8 +39,8 @@
         </div>
 
         <div class="mb-3">
-            <label  class="form-label">Immagine di copertina</label>
-            <input type="text" class="form-control  @error('cover_img') is-invalid @enderror" name="cover_img"  
+            <label class="form-label">Immagine di copertina</label>
+            <input type="text" class="form-control  @error('cover_img') is-invalid @enderror" name="cover_img"
                 value="{{ old('cover_img') }}">
             @error('cover_img')
                 <div class="invalid-feedback">
@@ -50,22 +51,20 @@
 
         <div class="mb-3">
             <label class="form-label">Tipologia</label>
-            <select class="form-select @error('type_id') is-invalid @enderror" name="type_id"  value="{{ old('type_id') }}">
+            <input class="form-control @error('type_id') is-invalid @enderror" name="type_id" "
+                    type="text"
+                    @foreach ($post->types as $type)
+                value="{{ $type->id }}{{ $type->typeName }}" @endforeach>
+                @error('type_id')
+        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+    @enderror
+            </div>
 
-                @foreach ($types as $type)
-                    <option value={{ $type->id }}>{{ $type->typeName }}</option>
-                @endforeach
-            </select>
-            @error('type_id')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
-
-        <div class="text-center">
-            <a href="{{ route('admin.posts.index') }}" class="btn btn-danger">Annulla</a>
-            <button class="btn btn-success">Salva Post</button>
-        </div>
-    </form>
+            <div class="text-center">
+                <a href="{{ route('admin.posts.index') }}" class="btn btn-danger">Annulla</a>
+                <button class="btn btn-success">Salva Post</button>
+            </div>
+        </form>
 @endsection

@@ -30,10 +30,12 @@ class StoreprojectRequest extends FormRequest
     {
        
             return [
-                "title" => "required|min:10|max:255",
-                "content" => "required|string",
+                "name" => "required|min:10|max:255",
+                "description" => "required|string",
                 
-                "cover_img" => "string|url"
+                "cover_img" => "string|url",
+              " typeName"=>"required|min:10|max:255",
+                "type_id"=>"nullable"
             ];
       
     }
