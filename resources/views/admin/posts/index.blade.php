@@ -17,7 +17,7 @@
                 <th>Cover</th>
                 <th>Nome</th>
                 <th>Descrizione</th>
-                <th>creation_date</th>
+                <th>TIPOLOGIA</th>
                 <th>GITHUB</th>
                 <th>Azioni</th>
             </tr>

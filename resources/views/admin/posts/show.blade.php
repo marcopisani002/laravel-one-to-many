@@ -29,7 +29,7 @@
             <div class="card-body text-white">
                 <div class="card-title"><strong class="px-3 text-warning">Nome:</strong>{{ $post->name }}</div>
                 <p class="card-text"><strong class="px-3 text-warning">Descrizione:</strong>{{ $post->description }}</p>
-                <p class="card-text"> @foreach ($post->types as $type)
+                <p class="card-text"><strong class="px-3 text-warning">Tipologia:</strong> @foreach ($post->types as $type)
                     {{ $type->typeName }}
                     @endforeach
                 </p>

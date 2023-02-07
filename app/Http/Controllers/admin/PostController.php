@@ -62,7 +62,8 @@ class PostController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Project $post) {
-        return view("admin.posts.show", compact("post"));
+        $types =Type::all();
+        return view("admin.posts.show", compact("post","types"));
     }
 
     /**

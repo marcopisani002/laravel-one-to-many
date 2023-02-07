@@ -53,7 +53,7 @@
             <label class="form-label">Tipologia</label>
             <input class="form-control @error('type_id') is-invalid @enderror" name="type_id" "
                     type="text"
-                    @foreach ($post->types as $type)
+                    @foreach ($type->types as $type)
                 value="{{ $type->id }}{{ $type->typeName }}" @endforeach>
                 @error('type_id')
         <div class="invalid-feedback">
